@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="static/assets/capa.gif" alt="Capa do projeto" />
+</p>
+
 # 🎬 Vicuna Cine
 
 **Vicuna Cine** é uma plataforma web de filmes e séries, onde você pode buscar títulos, ver trailers, descrições, informações completas, além de criar perfis, curtir conteúdos e salvar títulos na sua lista pessoal.
