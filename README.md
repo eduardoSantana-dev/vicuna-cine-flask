@@ -47,6 +47,7 @@ O banco de dados do projeto está estruturado para suportar funcionalidades como
 2. Crie um banco de dados vazio com o nome `dbvicunacine`.  
 3. Importe o arquivo `dbvicunacine.bd` para esse banco, que vai criar as tabelas e inserir dados iniciais.  
 
+---
 
 ## 💻 Como rodar o projeto
 
@@ -70,14 +71,10 @@ venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 
 # Execute a aplicação
-
 python main.py
-
-Abra no navegador: `http://localhost:5000`
-
-
-#fotos da aplicação
+```
+## 📸 Fotos da aplicação
 
 ![Tela de perfis](static/assets/image.png)
 
-![tela principal](static/assets/image1.png)
+![Tela principal](static/assets/image1.png)
