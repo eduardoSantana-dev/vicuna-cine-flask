@@ -1,0 +1,70 @@
+<div class=" container-fluid titulo-do-carousel">
+  <h3>{{nome}}</h3>
+</div>
+<div class="container-fluid container-carousel">
+  
+
+  <button class="btn-carousel voltar" id="voltar"><i class="fa-solid fa-chevron-left"></i></button>
+  <button class="btn-carousel avancar " id="avancar"><i class="fa-solid fa-chevron-right"></i></button>
+
+  <div class="carousel">
+
+    {% for midia in midias:%}
+    {% set generos = midia[3].strip("[]").replace("'", "").split(", ") %}
+    {% set tamanho = midia[9]%}
+    
+    {% set horas = tamanho // 60 %}
+    {% set minutos = tamanho % 60 %}
+    
+    <div class="card cardmidia" >
+      <div class="img"  onclick="openModal('{{midia[8]}}','{{midia[1]}}','{{midia[2]}}','{{midia[9]}}', '{{midia[4]}}','{{midia[5]}}','{{midia[7]}}','{{generos[1]}}','{{generos[2]}}','{{generos[3]}}','{{generos[4]}}','{{generos[5]}}','{{midia[11]}}','{{midia[12]}}','{{midia[0]}}')">
+        <img src="{{midia[6]}}" alt="" loading="lazy">
+      </div>
+      <div class="detalhes">
+        <div class="titulo-midia"  onclick="openModal('{{midia[8]}}','{{midia[1]}}','{{midia[2]}}','{{midia[9]}}', '{{midia[4]}}','{{midia[5]}}','{{midia[7]}}','{{generos[1]}}','{{generos[2]}}','{{generos[3]}}','{{generos[4]}}','{{generos[5]}}','{{midia[11]}}','{{midia[12]}}','{{midia[0]}}')">
+          <p class="titulo-midiap">{{midia[1]}}</p>
+          {% if midia[4]=='movie'%}
+              {%if horas ==0%}
+                  <p class="tamanho-midia"> {{minutos}}min </p>
+              {%else%}
+                  <p class="tamanho-midia"> {{horas}}h {{minutos}}min </p>
+              {%endif%}
+          {%else%}
+              {%if tamanho >1%}
+                  <p class="tamanho-midia"> {{midia[9]}} temporadas </p>
+              {%else%}
+                  <p class="tamanho-midia"> {{midia[9]}} temporada </p>
+              {%endif%}
+          {%endif%}
+          
+        </div>
+        <div class="botoes-midia">
+          <input type="hidden" value="{{midia[0]}}" id="idmidia" name="idmidia">
+          {%if midia[11] =='sim' %}
+          <button onclick="toggleListaRemover(this, '{{ midia[0] }}')" id="button-add-lista">
+            <i class="fa-solid fa-check">
+
+            </i></button>
+          {%else%}
+          <button  onclick="toggleLista(this, '{{ midia[0] }}')"  class="button-add-lista">
+            <i class="fa-solid fa-plus">
+              
+            </i></button>
+          {%endif%}
+          {%if midia[12] =='sim' %}
+          <button class="button-like"  onclick="descurtir(this, '{{ midia[0] }}')"><i class="fa-solid fa-thumbs-up"></i></button>
+          {%else%}
+          <button class="button-like"   onclick="curtir(this, '{{ midia[0] }}')"><i class="fa-regular fa-thumbs-up"></i></button>
+          {%endif%}
+
+        </div>
+      </div>
+    </div>
+   
+    {%endfor%}
+  </div>
+
+</div>
+
+
+<!---------------------------------- modal  ----------------------------->

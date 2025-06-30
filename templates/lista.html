@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha lista </title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='assets/vicu1.png') }}" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/lista.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/modalfilmes.css') }}">
+</head>
+
+<body>
+  {%include 'nav.html'%}
+  <h2 id="title">Minha lista</h2>
+  <div class="container-fluid cont-cards">
+    <div class="row g-4 ">
+      {% for midia in midias:%}
+      {% set generos = midia[3].strip("[]").replace("'", "").split(", ") %}
+      {% set tamanho = midia[9]%}
+
+      {% set horas = tamanho // 60 %}
+      {% set minutos = tamanho % 60 %}
+      <div class="col-auto">
+        <div class="card cardmidia">
+          <div class="img"
+            onclick="openModal('{{midia[8]}}','{{midia[1]}}','{{midia[2]}}','{{midia[9]}}', '{{midia[4]}}','{{midia[5]}}','{{midia[7]}}','{{generos[1]}}','{{generos[2]}}','{{generos[3]}}','{{generos[4]}}','{{generos[5]}}')">
+            <img src="{{midia[6]}}" alt="">
+          </div>
+          <div class="detalhes">
+            <div class="titulo-midia"
+              onclick="openModal('{{midia[8]}}','{{midia[1]}}','{{midia[2]}}','{{midia[9]}}', '{{midia[4]}}','{{midia[5]}}','{{midia[7]}}','{{generos[1]}}','{{generos[2]}}','{{generos[3]}}','{{generos[4]}}','{{generos[5]}}')">
+              <p class="titulo-midiap">{{midia[1]}}</p>
+              {% if midia[4]=='movie'%}
+              {%if horas ==0%}
+              <p class="tamanho-midia"> {{minutos}}min </p>
+              {%else%}
+              <p class="tamanho-midia"> {{horas}}h {{minutos}}min </p>
+              {%endif%}
+              {%else%}
+              {%if tamanho >1%}
+              <p class="tamanho-midia"> {{tamanho}} temporadas </p>
+              {%else%}
+              <p class="tamanho-midia"> {{tamanho}} temporada </p>
+              {%endif%}
+              {%endif%}
+
+            </div>
+            <div class="botoes-midia">
+              <input type="hidden" value="{{midia[0]}}" id="idmidia" name="idmidia">
+              {%if midia[11] =='sim' %}
+              <button onclick="toggleListaRemover(this, '{{ midia[0] }}')" id="button-add-lista">
+                <i class="fa-solid fa-check">
+
+                </i></button>
+              {%else%}
+              <button onclick="toggleLista(this, '{{ midia[0] }}')" class="button-add-lista">
+                <i class="fa-solid fa-plus">
+
+                </i></button>
+              {%endif%}
+          
+              {%if midia[12] =='sim' %}
+              <button class="button-like" onclick="descurtir(this, '{{ midia[0] }}')"><i
+                  class="fa-solid fa-thumbs-up"></i></button>
+              {%else%}
+              <button class="button-like" onclick="curtir(this, '{{ midia[0] }}')"><i
+                  class="fa-regular fa-thumbs-up"></i></button>
+              {%endif%}
+
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <button class="close-btn">✖</button>
+      <div class="video-container" id="trailer_img">
+
+      </div>
+      <div class="movie-info">
+        <h1 id="titulo"></h1>
+        <p style="display: flex; flex-direction: column;">
+          <strong id="ano">Ano:</strong>
+          <strong id="tamanhos">Duração:</strong>
+          <strong id="gen">Gêneros:</strong>
+        </p>
+        <p id="desc">
+
+        </p>
+        <div class="action-buttons">
+
+        </div>
+      </div>
+     
+    </div>
+  </div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/modalfilmes.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/addlista.js') }}"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  font-family: "Roboto", sans-serif;
+ 
+}
+.titulo-do-carousel{
+  color: white;
+
+  width: 97%;
+}
+.container-carousel {
+  position: relative;
+  width: 97%;
+  overflow: hidden;
+  height: 310px;
+  padding: 0px;
+  color: white;
+  margin-bottom: 4%;
+
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  /* Animação suave ao deslizar */
+  gap: 10px;
+  height: 100%;
+
+
+}
+
+.btn-carousel {
+  position: absolute;
+  top: 50%;
+  /* Centraliza verticalmente */
+  transform: translateY(-50%);
+  /* Ajusta o alinhamento */
+  background: transparent;
+  color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  height: 60%;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.voltar {
+  left: 0px;
+}
+
+.avancar {
+  right: 0px;
+}
+
+.container-carousel:hover .btn-carousel {
+  background-color: #0000007c;
+  color: #fff;
+}
+
+
+
+
+
+
+.cardmidia{
+
+    flex: 0 0 200px;
+    height: 100%;
+    border: 0px;
+    box-shadow: none;
+    border-radius: 3px;
+    background-color: transparent;
+    position: relative;
+    transition: transform 0.3s ease-in-out, z-index 0.3s ease-in-out;
+    z-index: 1; /* Mantém a ordem padrão */
+}
+
+.cardmidia .img{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.cardmidia .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+
+}
+.detalhes{
+  
+    width: 100%;
+    background-color: #0e0e0e;
+    height: 45%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: white;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    border-radius: 3px;
+    transition: top 0.3s ease-in-out;
+    -webkit-box-shadow: 0px 59px 92px -2px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 59px 92px -2px rgba(0,0,0,0.57);
+    box-shadow: 0px 59px 92px -2px rgba(0,0,0,0.57);
+}
+.cardmidia:hover .detalhes{
+  top:55%;
+}
+.titulo-midia{
+  cursor: pointer;
+  font-size: 120%;
+  font-weight: 500;
+  height: 70%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; 
+  margin: 0px;
+  padding: 0px;
+  
+}
+.titulo-midia .titulo-midiap{
+  margin: 0px;
+  padding: 0px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Número de linhas antes de cortar */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.tamanho-midia{
+  margin-bottom: 5px;
+  padding: 0px;
+  font-size: 15px;
+  padding-left: 2%;
+
+
+}
+.botoes-midia{
+
+  display: flex;
+  justify-content: space-evenly;
+}
+.botoes-midia button{
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+  border-radius: 500%;
+  border: none;
+  font-size: 120%;
+  background-color: #ffffff0e;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.219);
+}
+@media (max-width: 768px) {
+  .btn-carousel{
+    background-color: #0000007c;
+    color: white;
+  }
+  .container-carousel {
+    height: 150px;
+  }
+  
+.cardmidia{
+  flex: 0 0 100px;
+  height: 100%;
+  border: 0px;
+  box-shadow: none;
+  border-radius: 3px;
+  background-color: transparent;
+  position: relative;
+  transition: transform 0.3s ease-in-out, z-index 0.3s ease-in-out;
+  z-index: 1; /* Mantém a ordem padrão */
+}
+.titulo-do-carousel h3{
+  font-size: 15px;
+}
+}

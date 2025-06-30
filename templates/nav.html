@@ -1,0 +1,67 @@
+<nav class="navbar  px-3 fixar ">
+    <div class="logo">
+      <img src="../static/assets/vicu1.png" alt="">
+    </div>
+    <ul class="navbar-nav me-auto nav-lista">
+      <li class="nav-item">
+        <a class="nav-link " id="inicio" href="{{url_for('home.home')}}">Início</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link  " id="series" href="{{url_for('home.series')}}">Séries</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="filmes" href="{{url_for('home.filmes')}}">Filmes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link "id="infantil" href="#">Infantil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="lista" href="{{url_for('perfis.minha_lista')}}">Minha Lista</a>
+      </li>
+     
+      <!-- Dropdown simples para telas pequenas -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navDropdown" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Navegar
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item"  href="{{url_for('home.home')}}">Início</a></li>
+          <li><a class="dropdown-item" href="{{url_for('home.series')}}">Séries</a></li>
+          <li><a class="dropdown-item" href="{{url_for('home.filmes')}}">Filmes</a></li>
+          <li><a class="dropdown-item" href="#">Infatil</a></li>
+          <li><a class="dropdown-item"  href="{{url_for('perfis.minha_lista')}}">Minha Lista</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="d-flex align-items-center" id="elementosDireita">
+      <!-- Botão de busca com input -->
+
+      
+        <div class="search-box">
+          <button class="btn-search" type="button"><i class="fas fa-search"></i></button>
+          <input type="text" class="input-search" placeholder="Oque procura? " id="meuInput">
+        </div>
+     
+      <!-- Botão de notificações -->
+      <!-- Menu de perfil -->
+      <div class="dropdown-center">
+        {% for perfil in perfis_nav %}
+        <button class="perfil-botao" type="button" id="profileMenu" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <img src="../static/assets/perfis/{{perfil.imgPerfil}}" alt="">
+        </button>
+        {% endfor %}
+
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="{{url_for('perfis.perfis')}}">Meus perfis</a></li>
+          <li><a class="dropdown-item" href="{{url_for('cadastro.atualizar')}}">Atualizar conta</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="{{url_for('login.deslogar')}}">Sair</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>

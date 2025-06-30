@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    --fundo: #141414;
+    --escuro: #014399;
+    background: linear-gradient(#141414, rgba(0, 0, 0, 0.575));
+    background-color: var(--fundo);
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.container-cadastro {
+    margin-top: 0.5%;
+    width: 34%;
+    color: white;
+}
+
+.card-form-cadastro {
+    margin-top: 4%;
+    color: white;
+    background-color: #ffffff17;
+    padding: 0px;
+    padding-top: 10%;
+    height: 84vh;
+    border-radius: 10px;
+}
+
+.row-cadastro {
+    padding: 0px;
+    margin: 0px;
+    gap: 30px;
+}
+
+.row-cadastro p {
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.row-cadastro p a {
+    text-decoration: none;
+}
+
+.inputbox-cadastro {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.inputbox-cadastro p {
+    padding: 0px;
+    margin-top: 3%;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.inputbox-cadastro label {
+    width: fit-content;
+    font-weight: bold;
+}
+
+.inputbox-cadastro input {
+    height: 50px;
+    border: 2px solid #373737;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.151);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+
+
+}
+
+.inputbox-cadastro input:focus {
+    box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.39);
+    outline: 0;
+}
+
+.card-form-cadastro button {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    color: var(--fundo);
+    width: 30%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+#data {
+    font-size: 17px;
+    padding-left: 10px;
+    color: rgba(255, 255, 255, 0.404);
+}
+
+#data:focus {
+    color: white;
+}
+
+.erro-login {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.ajuda-cada {
+    font-size: 20px;
+}
+
+.erro-login p {
+    color: rgb(247, 95, 95);
+    padding: 0.5% 5% 0.5% 5%;
+    border-radius: 5px;
+    width: fit-content;
+    background-color: rgba(255, 40, 40, 0.274);
+}
+
+@media (max-width: 1100px) {
+    .container-cadastro {
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .container-cadastro {
+        width: 100%;
+        margin-top: 5%;
+    }
+
+    .card-form-cadastro {
+        height: 100vh;
+        background-color: transparent;
+    }
+
+    .inputbox-cadastro {
+        width: 90%;
+    }
+
+    .ajuda-cada {
+        font-size: 14px;
+    }
+
+    body {
+        overflow: auto;
+
+    }
+
+    .inputbox-cadastro input {
+        font-size: 15px;
+
+    }
+
+    .card-form-cadastro button {
+        width: 80%;
+        height: 50px;
+        margin-top: 10%;
+        margin-bottom: 15%;
+    }
+
+    .inputbox-cadastro input {
+        font-size: 15px;
+
+    }
+}
+
+@media (min-width: 2000px) {
+    .container-cadastro {
+        width: 30%;
+    }
+
+    .card-form-cadastro {
+        height: 60vh;
+    }
+
+    .inputbox-cadastro {
+        width: 90%;
+    }
+
+}

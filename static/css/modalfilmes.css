@@ -1,0 +1,132 @@
+
+  body{
+    --fundo:#141414 ;
+    --escuro:#002e69;
+  }
+  .modal-overlay {
+
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    max-width: 900px;
+    width: 90%;
+    overflow: hidden;
+    position: relative;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    animation: slideDown 0.4s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Aspect ratio 16:9 */
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .video-container img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .movie-info {
+    padding: 16px;
+    text-align: left;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  
+  .action-buttons button {
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.534);
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.911);
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.671);
+    color: rgba(255, 255, 255, 0.534);
+  }
+  
+  .similar-titles {
+    padding: 16px;
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+  
+  .titles-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .modal-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .modal-content::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 4px;
+  }
+  
+  .modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  

@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    --fundo: #141414;
+    --escuro: #014399;
+    background-color: var(--fundo);
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0px;
+}
+.container-perfis{
+    margin-top: 10%;
+}
+.container-perfis h1{
+    color: white;
+}
+.container-perfis .row{
+    margin-top: 5%;
+    gap: 50px;
+    height: 100%;
+}
+.perfil{
+    border: 3px solid transparent;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 7px;
+    
+    
+}
+.perfil button{
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+
+   
+    
+}
+
+.perfil .img{
+    height: 210px;
+    position: relative;
+
+}
+.perfil img{
+    transition: 100ms;
+    border-radius: 7px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+}
+
+.perfil p{
+    transition: 100ms;
+    margin-top: 10%;
+    color: #ffffffb2;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.perfil:hover img{
+    border: 3px solid white;
+}
+.perfil:hover p {
+    color: white;
+}
+.add-perfil{
+    color: #ffffffb2;
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:150px;
+}
+.add-perfil:hover{
+    color: white;
+}
+.container-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #000000bb;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999;
+    
+    
+}
+.active{
+    display: flex;
+    opacity: 1;
+}
+.fechar {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+ 
+    margin: 0px;
+    padding: 0px;
+    
+}
+.fechar button{
+    width: fit-content;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    margin-top: 2%;
+    margin-right: 2%;
+ 
+}
+.modal-add{
+    margin: 0px;
+    padding: 0px;
+    width: 25%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    background-color: #141414;
+    border-radius: 5px;
+    border: 1px rgb(44, 44, 44) solid;
+    animation: slideDown 0.4s ease;
+    
+}
+@keyframes slideDown {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .modal-add p{
+      color: #ffffffb2;
+    }
+    .form-add{
+        width: 100%;
+
+        
+    }
+    .form-nome{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        visibility: visible;
+        margin-top: 5%;
+    }
+    .modal-add input{
+        
+        height: 45px;
+        width: 80%;
+        border: none;
+        outline: none;
+        border: 1px white solid  ;
+        background-color: transparent;
+        border-radius: 3px;
+        padding-left: 3%;
+        color: white;
+    }
+    .modal-add input:focus{
+        border: 2px white solid  ;
+    }
+    .continuar{
+        border: none;
+        outline: none;
+        margin-top: 5%;
+        width: 50%;
+        height: 40px;
+        font-size: 25px;
+        border-radius: 3px;
+        font-weight: 500;
+        background-color: #fffffff1;
+        
+    }
+    .escolherfoto{
+        animation: escolherfotos 0.5s ease;
+        height: 80%;
+        width: 30%;
+    }
+    @keyframes escolherfotos {
+      from {
+          width: 25%;
+          height: 35%;
+        
+      }
+      to {
+          height: 80%;
+          width: 30%;
+      }
+    }
+    .select-foto{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.9s ease;
+    animation: fotos 3s ease;
+
+}
+@keyframes fotos {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .fecharmodal{
+    opacity: 0;
+    animation: fecharmodal 0.3s ease;
+
+  }
+  @keyframes fecharmodal {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+          transform: translateY(-50px);
+          opacity: 0;
+          display: none;
+      }
+    }
+ 
+.image-radio {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.image-radio input[type="radio"] {
+    display: none;
+}
+
+.image-radio img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 3px solid transparent;
+    border: 5px;
+
+}
+
+.image-radio input[type="radio"]:checked + img {
+    border: 3px solid white;
+}
+.gerenciar{
+    display: flex;
+    justify-content: center;
+}
+.gerenciar button{
+    margin-top: 10%;
+    width: 450px;
+    height: 55px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #ffffff00;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.527);
+    color: white;
+}
+.editar-perfil{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0000009f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: rgba(231, 231, 231, 0.767);
+    z-index: 99;
+    border-radius: 7px;
+    width: 100%;
+
+}
+.edit{
+    display: none;
+}
+.excluir button{
+    font-size: 20px;
+    
+    margin-bottom: 5%;
+    color: white;
+}
+.excluir button:hover{
+    color: red;
+}
+.titulo-add-perfil {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .modal-add{
+        margin: 0px;
+        padding: 0px;
+        width: 90%;
+        height: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        background-color: #141414;
+        border-radius: 5px;
+        border: 1px rgb(44, 44, 44) solid;
+        animation: slideDown 0.4s ease;
+        
+    }
+    .titulo-add-perfil {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .desc-add-perfil{
+        font-size: 13px;
+    }
+    .escolherfoto{
+        animation: escolherfotos 0.5s ease;
+        height: 70%;
+        width: 100%;
+
+    }
+    .escolherfoto h2{
+        font-size: 20px;
+    }
+    @keyframes escolherfotos {
+        from {
+            width: 90%;
+            height: 45%;
+          
+        }
+        to {
+            height: 70%;
+            width: 100%;
+        }
+      }
+    .select-foto{
+        animation: fotos 5s ease;
+
+    }
+    .select-foto-perfil-box{
+        width: 90px;
+    }
+    .perfil{
+        height: 100%;
+        width: 150px;
+        
+        
+    }
+    .container-perfis .row{
+        margin-top: 5%;
+        gap: 10px;
+        height: 100%;
+    }
+    .perfil .img{
+        height: 150px;
+        position: relative;
+    
+    }
+    .add-perfil{
+       
+        height: 150px;
+      
+        font-size:130px;
+    }
+    .container-perfis h1{
+        font-size: 20px;
+        margin-top: 5%;
+    }
+    .container-perfis {
+     
+        margin-top: 5%;
+    }
+    
+}
