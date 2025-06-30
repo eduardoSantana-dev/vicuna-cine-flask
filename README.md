@@ -19,15 +19,18 @@
 ## 🛠️ Tecnologias utilizadas
 
 ### Backend:
-- Python  
-- Flask  
-- MySQL  
-- Peewee ORM  
+### Backend:
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="20" /> Python  
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" width="20" /> Flask  
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="20" /> MySQL  
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Peewee" width="20" /> Peewee ORM  
+
+
 
 ### Frontend:
-- HTML5  
-- CSS3  
-- JavaScript  
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="20" /> HTML5  
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="20" /> CSS3  
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="20" /> JavaScript  
 
 ### Integrações:
 - [TMDB API](https://developers.themoviedb.org/)
