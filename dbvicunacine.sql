@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Fev-2025 às 21:04
+-- Tempo de geração: 30/06/2025 às 16:18
 -- Versão do servidor: 10.4.32-MariaDB
--- versão do PHP: 8.2.12
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tblike`
+-- Estrutura para tabela `tblike`
 --
 
 CREATE TABLE `tblike` (
@@ -34,24 +34,17 @@ CREATE TABLE `tblike` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tblike`
+-- Despejando dados para a tabela `tblike`
 --
 
 INSERT INTO `tblike` (`idLike`, `idMidia`, `idPerfil`) VALUES
-(37, 688, 24),
-(41, 411, 24),
-(42, 381, 24),
-(43, 691, 24),
-(44, 711, 24),
-(46, 379, 31),
-(47, 382, 31),
-(48, 385, 31),
-(49, 685, 31);
+(51, 385, 35),
+(52, 804, 35);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tblista`
+-- Estrutura para tabela `tblista`
 --
 
 CREATE TABLE `tblista` (
@@ -61,18 +54,18 @@ CREATE TABLE `tblista` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tblista`
+-- Despejando dados para a tabela `tblista`
 --
 
 INSERT INTO `tblista` (`idLista`, `idPerfil`, `idmidia`) VALUES
-(166, 31, 685),
-(169, 31, 412),
-(170, 24, 717);
+(1, 1, 500),
+(174, 35, 804),
+(175, 35, 379);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbmidia`
+-- Estrutura para tabela `tbmidia`
 --
 
 CREATE TABLE `tbmidia` (
@@ -90,7 +83,7 @@ CREATE TABLE `tbmidia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tbmidia`
+-- Despejando dados para a tabela `tbmidia`
 --
 
 INSERT INTO `tbmidia` (`id`, `titulo`, `descricao`, `genero`, `tipo`, `data_lancamento`, `poster`, `imgfundo`, `trailer`, `tamanho`, `id_tmdb`) VALUES
@@ -6451,7 +6444,7 @@ INSERT INTO `tbmidia` (`id`, `titulo`, `descricao`, `genero`, `tipo`, `data_lanc
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbperfil`
+-- Estrutura para tabela `tbperfil`
 --
 
 CREATE TABLE `tbperfil` (
@@ -6462,21 +6455,16 @@ CREATE TABLE `tbperfil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tbperfil`
+-- Despejando dados para a tabela `tbperfil`
 --
 
 INSERT INTO `tbperfil` (`idPerfil`, `idUser`, `nomePerfil`, `imgPerfil`) VALUES
-(17, 6, 'eduardo', '1.png'),
-(24, 1, 'eduardo', '8.png'),
-(27, 1, 'eduardo33333333', '7.png'),
-(29, 1, '111', '2.png'),
-(30, 4, 'eduardo', '2.png'),
-(31, 10, 'eduardo', '4.png');
+(35, 11, 'Eduardo', '9.png');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbuser`
+-- Estrutura para tabela `tbuser`
 --
 
 CREATE TABLE `tbuser` (
@@ -6490,25 +6478,18 @@ CREATE TABLE `tbuser` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `tbuser`
+-- Despejando dados para a tabela `tbuser`
 --
 
 INSERT INTO `tbuser` (`idUser`, `nomeUser`, `emailUser`, `senhaUser`, `cpfUser`, `DataNasc`, `StatusContaUser`) VALUES
-(1, 'viado', 'email@email.com', '123', '121.111.111-99', '2000-10-12', 'ativo'),
-(2, 'eduardo', 'email@email.com', '1111111', '1111', '0001-01-11', 'ativo'),
-(3, 'vitin silva', 'zika.dark@hotmail.com', '123', '13131313', '1111-11-12', 'ativo'),
-(4, 'teste', 'email@email.com', 'teste', 'teste', '1111-11-11', 'ativo'),
-(5, 'cara de sabel', 'edu@gmail.com', '123', '4141242343232', '0001-12-13', 'ativo'),
-(6, 'teste', 'teste@teste', 'teste', 'test', '0001-11-11', 'ativo'),
-(9, 'eduardo', 'email@email.com', 'teste', '11111111112', '2000-10-12', 'ativo'),
-(10, 'aaaa', 'eduardozika@gmail.com', '123', '212.323.232-3', '0001-01-11', 'ativo');
+(11, 'eduardo santana', 'usuario@gmail.com', '123', '111.222.333-44', '2000-02-10', 'ativo');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `tblike`
+-- Índices de tabela `tblike`
 --
 ALTER TABLE `tblike`
   ADD PRIMARY KEY (`idLike`),
@@ -6516,7 +6497,7 @@ ALTER TABLE `tblike`
   ADD KEY `idPerfil` (`idPerfil`);
 
 --
--- Índices para tabela `tblista`
+-- Índices de tabela `tblista`
 --
 ALTER TABLE `tblista`
   ADD PRIMARY KEY (`idLista`),
@@ -6524,40 +6505,40 @@ ALTER TABLE `tblista`
   ADD KEY `idMidia` (`idmidia`);
 
 --
--- Índices para tabela `tbmidia`
+-- Índices de tabela `tbmidia`
 --
 ALTER TABLE `tbmidia`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `filmeserie_id_tmdb` (`id_tmdb`);
 
 --
--- Índices para tabela `tbperfil`
+-- Índices de tabela `tbperfil`
 --
 ALTER TABLE `tbperfil`
   ADD PRIMARY KEY (`idPerfil`),
   ADD KEY `idUser` (`idUser`);
 
 --
--- Índices para tabela `tbuser`
+-- Índices de tabela `tbuser`
 --
 ALTER TABLE `tbuser`
   ADD PRIMARY KEY (`idUser`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `tblike`
 --
 ALTER TABLE `tblike`
-  MODIFY `idLike` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `idLike` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de tabela `tblista`
 --
 ALTER TABLE `tblista`
-  MODIFY `idLista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
+  MODIFY `idLista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
 
 --
 -- AUTO_INCREMENT de tabela `tbmidia`
@@ -6569,20 +6550,20 @@ ALTER TABLE `tbmidia`
 -- AUTO_INCREMENT de tabela `tbperfil`
 --
 ALTER TABLE `tbperfil`
-  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `idPerfil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de tabela `tbuser`
 --
 ALTER TABLE `tbuser`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `tbperfil`
+-- Restrições para tabelas `tbperfil`
 --
 ALTER TABLE `tbperfil`
   ADD CONSTRAINT `tbperfil_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `tbuser` (`idUser`);

@@ -39,4 +39,7 @@ app.register_blueprint(midias_route)
 db.connect()
 db.create_tables([tbUser])
 
-app.run(host='0.0.0.0', port=8000, debug=True)
+app.run(debug=True)
+
+# caso queira rodar direto em seu ip
+# app.run(host='0.0.0.0', port=8000, debug=True)
