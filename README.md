@@ -61,8 +61,8 @@ O banco de dados do projeto está estruturado para suportar funcionalidades como
 ### Setup:
 ```bash
 # Clone o repositório
-git clone https://github.com/seuusuario/vicuna-cine.git
-cd vicuna-cine
+git clone https://github.com/eduardoSantana-dev/vicuna-cine-flask
+cd vicuna-cine-flask
 
 # Crie um ambiente virtual
 python -m venv venv
@@ -74,6 +74,8 @@ pip install -r requirements.txt
 
 # Execute a aplicação
 python main.py
+
+Abra no navegador: `http://localhost:5000`
 ```
 ## 📸 Fotos da aplicação
 
